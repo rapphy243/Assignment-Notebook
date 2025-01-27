@@ -32,3 +32,11 @@ struct AssignmentItem : Identifiable, Codable {
     var description: String
     var dueDate = Date()
 }
+
+let colors = ["English": Color.blue,
+              "Math": Color.gray,
+              "Science": Color.green,
+              "Computer Science": Color.gray,
+              "Social Studies": Color.orange,
+              "Economics": Color.orange,
+              "World Language": Color.yellow]

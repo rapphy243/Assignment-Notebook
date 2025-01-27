@@ -23,6 +23,7 @@ struct ContentView: View {
                         Spacer()
                         Text(item.dueDate, style: .date)
                     }
+                    .listRowBackground(colors[item.course]!)
                 }
                 .onMove(perform: { indices, newOffset in
                     assignmentItems.items.move(fromOffsets: indices, toOffset: newOffset)
@@ -47,4 +48,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }

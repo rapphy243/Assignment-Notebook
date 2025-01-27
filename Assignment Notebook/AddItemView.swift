@@ -14,16 +14,20 @@ struct AddItemView: View {
     @State private var course = ""
     @State private var description = ""
     @State private var dueDate = Date()
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             Form {
                 TextField("Description", text: $description)
+                    .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
                 DatePicker("Due Date", selection: $dueDate)
+                    .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
                 Picker("Course", selection: $course) {
                     ForEach(Self.courses, id: \.self) { course in
                         Text(course)
                     }
                 }
+                .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
             }
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
             .navigationBarItems(trailing: Button("Save") {
@@ -39,4 +43,5 @@ struct AddItemView: View {
 
 #Preview {
     AddItemView(assignmentItems: AssignmentList())
+        .preferredColorScheme(.dark)
 }
