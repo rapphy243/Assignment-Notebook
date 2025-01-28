@@ -12,7 +12,6 @@ struct Assignment_NotebookApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .preferredColorScheme(.dark)
         }
     }
 }
