@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddItemView: View {
-    @Environment(\.presentationMode) var presintationMode
+    @Environment(\.dismiss) var dismiss
     static let courses = ["English", "Math", "Science", "Computer Science", "Social Studies", "Economics", "World Language"]
     @ObservedObject var assignmentItems: AssignmentList
     @State private var course = ""
@@ -34,7 +34,7 @@ struct AddItemView: View {
                 if course.count > 0 && description.count > 0 {
                     let item = AssignmentItem(id: UUID(), course: course, description: description, dueDate: dueDate)
                     assignmentItems.items.append(item)
-                    presintationMode.wrappedValue.dismiss()
+                    dismiss()
                 }
             })
         }

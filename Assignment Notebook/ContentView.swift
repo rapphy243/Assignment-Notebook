@@ -32,7 +32,7 @@ struct ContentView: View {
                     assignmentItems.items.remove(atOffsets: indexSet)
                 })
             }
-            .navigationBarTitle("Assignments")
+            .navigationBarTitle("My Assignments")
             .navigationBarItems(leading: EditButton(),
                                 trailing: Button(action: {
                 showAddItemView = true
