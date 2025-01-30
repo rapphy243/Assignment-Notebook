@@ -18,16 +18,20 @@ struct AddItemView: View {
     var body: some View {
         NavigationView {
             Form {
+                HStack(spacing: 0) {
+                    Spacer()
+                    Image(systemName: icons[course] ?? "graduationcap")
+                        .font(.system(size: 80))
+                        .foregroundStyle(colors[course] ?? .primary)
+                    Spacer()
+                }
                 TextField("Description", text: $description)
-                    .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
                 DatePicker("Due Date", selection: $dueDate)
-                    .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
                 Picker("Course", selection: $course) {
                     ForEach(Self.courses, id: \.self) { course in
                         Text(course)
                     }
                 }
-                .listRowBackground(colors[course] ?? (colorScheme == .dark ? Color.gray.opacity(0.2) : Color.white))
             }
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
             .navigationBarItems(trailing: Button("Save") {
