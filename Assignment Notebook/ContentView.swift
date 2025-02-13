@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var assignmentItems = AssignmentList()
+    @ObservedObject private var assignmentItems = AssignmentList()
     @State private var showAddItemView = false
     var body: some View {
         NavigationView {
