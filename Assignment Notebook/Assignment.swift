@@ -44,7 +44,7 @@ let colors = ["English": Color.blue,
 let icons = ["English": "book",
              "Math": "plus.forwardslash.minus",
              "Science": "atom",
-             "Computer S#colorLiteral(red: 0, green: 0.46, blue: 0.89, alpha: 1)cience": "apple.terminal",
+             "Computer Science": "apple.terminal",
              "Social Studies": "globe",
              "Economics": "chart.line.uptrend.xyaxis",
              "World Language": "translate"]
